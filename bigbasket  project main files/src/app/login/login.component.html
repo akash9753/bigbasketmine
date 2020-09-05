@@ -1,0 +1,45 @@
+<div class="container-fluid">
+    <div class="row" style="height:100vh">
+        <!--left block-->
+       <div class="col bg-light d-flex flex-column justify-content-center align-items-center"><img src="../assets/bbreg.png" alt="">
+           <div style="font-family: cursive; font-size: 32px;">Welcome to</div>
+           <div class="h3" style=" font-size: 70px; color: blue;">BIG BASKET</div>
+           <div>“Whoever said that money can’t buy happiness simply didn’t know where to go shopping.”</div>
+        </div>
+      
+      
+       <!--right block-->
+       <div class="col bg-light d-flex flex-column justify-content-center align-items-center"
+       [formGroup]="fbFormGroup">
+        <div class="h3">Application login</div>
+         <div>
+             <input 
+             type="text"
+             placeholder="Enter Username"
+             class="form-control"
+             formControlName="username"
+             >
+
+             </div>
+             <div class="mt-2">
+                <input 
+                type="password"
+                placeholder="Enter Password"
+                class="form-control"
+                formControlName="password"
+                >
+                </div>
+              
+              <button class="btn btn-warning mt-1" [disabled]="!fbFormGroup.valid " 
+              (click) = "loginProcessHere()"
+              >Login</button>
+            
+              <div class="alert alert-danger" role="alert" *ngIf="uiInvalidCredential">
+                wrong Username & Password
+              </div>
+    
+    
+              <a routerLink="/register">Register Here</a>
+
+</div>
+
